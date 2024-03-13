@@ -5,7 +5,6 @@ from datetime import datetime
 
 # Sample data - features of cars and their corresponding labels (0 for non-criminal, 1 for criminal)
 # Each row represents a car, and each column represents a feature
-# This is just sample data, you'll need to replace it with your actual dataset
 
 data = Data()
 
