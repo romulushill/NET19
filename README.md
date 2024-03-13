@@ -1,5 +1,6 @@
 # NET 19 📊
 
+<img src="https://github.com/romulushill/net19/blob/main/net19.png" alt="Romulus Hill's NET19 Banner - Neural Network Traffic Monitoring, Software Developer, Computational Pioneer">
 
 ## Brief
 
