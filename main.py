@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 from modules.training import Training
+from modules.graphing import Application
 from datetime import datetime
 import random
 import json
@@ -12,11 +13,13 @@ import os
 
 class Main:
     def __init__(self, aspects_reference=["darkness", "damaged", "speeding", "gender", "size"]):
+
         self.aspects_reference = aspects_reference
         self.trainer = Training(
             database_reference="./resources/datastore.json", aspects_reference=self.aspects_reference, result_reference = "criminal"
         )
         self.model = self.trainer.train()
+        self.app = Application(number_of_nodes=len(self.trainer.data))
 
     # Prediction Function
     def predict_criminal_car(self, car_properties):
@@ -95,7 +98,9 @@ while True:
                 contents["Dataset"] = datastore
                 with open("./resources/datastore.json", "w") as fp:
                     json.dump(contents, fp)
+            network.app.number_of_nodes+=1
         elif choice.lower() == "q":
+            network.app.running = False
             break
             os.quit()
     except Exception as error:
