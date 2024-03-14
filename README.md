@@ -1,4 +1,4 @@
-# NET 19 <img src="https://github.com/romulushill/NET19/blob/main/resources/images/icon-small.png" alt="Main Logo">
+# <img src="https://github.com/romulushill/NET19/blob/main/resources/images/icon-small.png" alt="Main Logo">NET 19
 
 <img src="https://github.com/romulushill/NET19/blob/main/resources/images/NET19.png" alt="Romulus Hill's NET19 Banner - Neural Network Traffic Monitoring, Software Developer, Computational Pioneer">
 
