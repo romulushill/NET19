@@ -2,7 +2,9 @@ import numpy as np
 import tensorflow as tf
 from modules.training import Training
 from datetime import datetime
-
+import random
+import json
+import os
 # Sample data - features of cars and their corresponding labels (0 for non-criminal, 1 for criminal)
 # Each row represents a car, and each column represents a feature
 
@@ -40,9 +42,61 @@ class Main:
 
 network = Main()
 
-# Example input dictionary for car properties
-car_properties = {"darkness": 0.6, "damaged": 0.7, "speeding": 0.3, "gender":0.2,"size":0.9}
 
-# Predict if the car is criminal
-is_criminal = network.predict_criminal_car(car_properties)
-print("Is the car criminal?", is_criminal)
+with open("./resources/datastore.json", "r") as fp:
+    contents = json.load(fp)
+    datastore = contents["Dataset"]
+
+
+while True:
+    try:
+        choice = input("[T] Test. [Q] Quit.\n")
+        if choice.lower() == "t":
+            manual = input("[M] Manual. [A] Automatic.\n")
+            if manual.lower() == "m":
+                darkness_input = input("Darkness --> ")
+                damaged_input = input("Damaged --> ")
+                speeding_input = input("Speeding --> ")
+                gender_input = input("Gender --> ")
+                size_input = input("Size --> ")
+            else:
+                darkness_input = random.uniform(0,1)
+                damaged_input = random.uniform(0, 1)
+                speeding_input = random.uniform(0, 1)
+                gender_input = random.uniform(0, 1)
+                size_input = random.uniform(0, 1)
+
+            test_dict = {"darkness": float(darkness_input), "damaged": float(damaged_input), "speeding": float(speeding_input), "gender":float(gender_input),"size":float(size_input)}
+            print(test_dict)
+            is_criminal = network.predict_criminal_car(test_dict)
+            print(f"Criminal Vehicle: {is_criminal}")
+
+            correct = input("Correct? [Y] [N] --> ")
+            if correct.lower() == "y":
+                # add to initial datastore
+                if is_criminal == True:
+                    test_dict["criminal"] = 1
+                else:
+                    test_dict["criminal"] = 0
+                datastore.append(test_dict)
+                print("Appending initial datastore.")
+                contents["Dataset"] = datastore
+                with open("./resources/datastore.json", "w") as fp:
+                    json.dump(contents, fp)
+            else:
+                if is_criminal == True:
+                    test_dict["criminal"] = 0
+                else:
+                    test_dict["criminal"] = 1
+                datastore.append(test_dict)
+                # add to initial datastore
+                print("Appending initial datastore.")
+                contents["Dataset"] = datastore
+                with open("./resources/datastore.json", "w") as fp:
+                    json.dump(contents, fp)
+        elif choice.lower() == "q":
+            break
+            os.quit()
+    except Exception as error:
+        print(f"Failed: {error}\n\n")
+        pass
