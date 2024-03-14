@@ -2,13 +2,13 @@
 class Data:
     def __init__(self):
         self.training_data = [
-            {"colour": 0.85, "damaged": 0.2, "speeding": 0.1, "gender": 0.3, "size": 0.6, "criminal": 0},
-            {"colour": 0.72, "damaged": 0.1, "speeding": 0.8, "gender": 0.5, "size": 0.4, "criminal": 0},
-            {"colour": 0.45, "damaged": 0.3, "speeding": 0.6, "gender": 0.7, "size": 0.2, "criminal": 0},
-            {"colour": 0.92, "damaged": 0.5, "speeding": 0.2, "gender": 0.4, "size": 0.8, "criminal": 0},
-            {"colour": 0.61, "damaged": 0.4, "speeding": 0.4, "gender": 0.6, "size": 0.5, "criminal": 0},
-            {"colour": 0.33, "damaged": 0.6, "speeding": 0.7, "gender": 0.8, "size": 0.3, "criminal": 0},
-            {"colour": 0.77, "damaged": 0.3, "speeding": 0.5, "gender": 0.2, "size": 0.7, "criminal": 0},
+            {"colour": 0.85, "damaged": 0.2, "speeding": 0.1, "gender": 0.3, "size": 0.6, "criminal": 0.3},
+            {"colour": 0.72, "damaged": 0.1, "speeding": 0.8, "gender": 0.5, "size": 0.4, "criminal": 0.5},
+            {"colour": 0.45, "damaged": 0.3, "speeding": 0.6, "gender": 0.7, "size": 0.2, "criminal": 0.5},
+            {"colour": 0.92, "damaged": 0.5, "speeding": 0.2, "gender": 0.4, "size": 0.8, "criminal": 0.6},
+            {"colour": 0.61, "damaged": 0.4, "speeding": 0.4, "gender": 0.6, "size": 0.5, "criminal": 0.5},
+            {"colour": 0.33, "damaged": 0.6, "speeding": 0.7, "gender": 0.8, "size": 0.3, "criminal": 0.7},
+            {"colour": 0.77, "damaged": 0.3, "speeding": 0.5, "gender": 0.2, "size": 0.7, "criminal": 0.6},
             {"colour": 0.49, "damaged": 0.2, "speeding": 0.3, "gender": 0.9, "size": 0.1, "criminal": 0},
             {"colour": 0.68, "damaged": 0.7, "speeding": 0.4, "gender": 0.1, "size": 0.9, "criminal": 0},
             {"colour": 0.55, "damaged": 0.8, "speeding": 0.9, "gender": 0.6, "size": 0.3, "criminal": 0},
