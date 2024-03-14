@@ -16,7 +16,7 @@ class Main:
 
         self.aspects_reference = aspects_reference
         self.trainer = Training(
-            database_reference="./resources/datastore.json", aspects_reference=self.aspects_reference, result_reference = "criminal"
+            database_reference="./resources/datastores/atastore.json", aspects_reference=self.aspects_reference, result_reference = "criminal"
         )
         self.model = self.trainer.train()
         self.app = Application(number_of_nodes=len(self.trainer.data))
@@ -85,7 +85,7 @@ while True:
                 datastore.append(test_dict)
                 print("Appending initial datastore.")
                 contents["Dataset"] = datastore
-                with open("./resources/datastore.json", "w") as fp:
+                with open("./resources/datastores/datastore.json", "w") as fp:
                     json.dump(contents, fp)
             else:
                 if is_criminal == True:
@@ -96,7 +96,7 @@ while True:
                 # add to initial datastore
                 print("Appending initial datastore.")
                 contents["Dataset"] = datastore
-                with open("./resources/datastore.json", "w") as fp:
+                with open("./resources/datastores/datastore.json", "w") as fp:
                     json.dump(contents, fp)
             network.app.number_of_nodes+=1
         elif choice.lower() == "q":
