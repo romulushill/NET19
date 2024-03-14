@@ -16,7 +16,7 @@ class Main:
 
         self.aspects_reference = aspects_reference
         self.trainer = Training(
-            database_reference="./resources/datastores/atastore.json", aspects_reference=self.aspects_reference, result_reference = "criminal"
+            database_reference="./resources/datastores/datastore.json", aspects_reference=self.aspects_reference, result_reference = "criminal"
         )
         self.model = self.trainer.train()
         self.app = Application(number_of_nodes=len(self.trainer.data))
@@ -47,7 +47,7 @@ class Main:
 network = Main()
 
 
-with open("./resources/datastore.json", "r") as fp:
+with open("./resources/datastores/datastore.json", "r") as fp:
     contents = json.load(fp)
     datastore = contents["Dataset"]
 
