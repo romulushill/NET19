@@ -14,7 +14,7 @@ class Application:
             # Set up the window
             self.window = pygame.display.set_mode((0, 0), pygame.RESIZABLE)
 
-            pygame.display.set_caption("Floating Nodes")
+            pygame.display.set_caption(title)
             programIcon = pygame.image.load('./resources/images/icon.png')
 
             pygame.display.set_icon(programIcon)
