@@ -15,7 +15,7 @@ class Application:
             self.window = pygame.display.set_mode((0, 0), pygame.RESIZABLE)
 
             pygame.display.set_caption(title)
-            programIcon = pygame.image.load('./resources/images/icon.png')
+            programIcon = pygame.image.load('./images/icon.png')
 
             pygame.display.set_icon(programIcon)
 

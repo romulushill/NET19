@@ -57,7 +57,7 @@ class Training:
             current_datetime = datetime.now()
             formatted_date = current_datetime.strftime("%Y-%m-%d")
             formatted_time = str(current_datetime.strftime("%H.%M.%S"))
-            self.path = f"./resources/models/weightings-{formatted_date}-{formatted_time}.weights.h5"
+            self.path = f"./Traffic-Network/resources/models/weightings-{formatted_date}-{formatted_time}.weights.h5"
             self.model.save_weights(self.path)
             self.model.load_weights(self.path)
 
