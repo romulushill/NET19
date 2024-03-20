@@ -16,7 +16,7 @@ class Main:
 
         self.aspects_reference = aspects_reference
         self.trainer = Training(
-            database_reference="./Traffic-Network/resources/datastores/datastore.json", aspects_reference=self.aspects_reference, result_reference = "criminal"
+            database_reference="./Social-Network/resources/datastores/datastore.json", aspects_reference=self.aspects_reference, result_reference = "criminal"
         )
         self.model = self.trainer.train()
         self.app = Application(number_of_nodes=len(self.trainer.data))
@@ -47,7 +47,7 @@ class Main:
 network = Main()
 
 
-with open("./Traffic-Network/resources/datastores/datastore.json", "r") as fp:
+with open("./Social-Network/resources/datastores/datastore.json", "r") as fp:
     contents = json.load(fp)
     datastore = contents["Dataset"]
 
@@ -85,7 +85,7 @@ while True:
                 datastore.append(test_dict)
                 print("Appending initial datastore.")
                 contents["Dataset"] = datastore
-                with open("./Traffic-Network/resources/datastores/datastore.json", "w") as fp:
+                with open("./Social-Network/resources/datastores/datastore.json", "w") as fp:
                     json.dump(contents, fp)
             else:
                 if is_criminal == True:
@@ -96,7 +96,7 @@ while True:
                 # add to initial datastore
                 print("Appending initial datastore.")
                 contents["Dataset"] = datastore
-                with open("./Traffic-Network/resources/datastores/datastore.json", "w") as fp:
+                with open("./Social-Network/resources/datastores/datastore.json", "w") as fp:
                     json.dump(contents, fp)
             network.app.number_of_nodes+=1
         elif choice.lower() == "q":
@@ -106,3 +106,11 @@ while True:
     except Exception as error:
         print(f"Failed: {error}\n\n")
         pass
+
+
+
+users = []
+
+for user in users:
+    print(user.name)
+    
